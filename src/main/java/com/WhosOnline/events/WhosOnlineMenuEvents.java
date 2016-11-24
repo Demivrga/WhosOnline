@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryType;
 
 import com.WhosOnline.WhosOnline;
 import com.WhosOnline.menu.WhosOnlineMenu;
@@ -67,6 +68,14 @@ public class WhosOnlineMenuEvents implements Listener {
 	public void MenuMove(InventoryClickEvent ev) {
 
 		if (ev.getInventory().getName().contains(WhosOnlineMenu.OnlineTitle)) {
+			ev.setCancelled(true);
+		}
+	}
+	
+	@EventHandler
+	public void ClickEvent(InventoryClickEvent ev) {
+
+		if (ev.getInventory().getType().equals(InventoryType.PLAYER)) {
 			ev.setCancelled(true);
 		}
 	}
