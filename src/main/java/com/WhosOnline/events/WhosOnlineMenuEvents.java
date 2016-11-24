@@ -71,14 +71,6 @@ public class WhosOnlineMenuEvents implements Listener {
 			ev.setCancelled(true);
 		}
 	}
-	
-	@EventHandler
-	public void ClickEvent(InventoryClickEvent ev) {
-
-		if (ev.getInventory().getType().equals(InventoryType.PLAYER)) {
-			ev.setCancelled(true);
-		}
-	}
 
 	@EventHandler
 	public void MenuDrag(InventoryDragEvent ev) {
