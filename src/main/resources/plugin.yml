@@ -1,0 +1,15 @@
+name: WhosOnline
+main: com.WhosOnline.WhosOnline
+version: 0.0.2
+author: Demonly
+commands:
+  online:
+    description: Opens the Online Inventory.
+  who:
+    description: Opens the Online Inventory.
+  list:
+    description: Opens the Online Inventory.
+  users:
+    description: Opens the Online Inventory.
+  whom:
+    description: Opens the Online Inventory.

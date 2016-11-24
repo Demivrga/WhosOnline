@@ -1,0 +1,8 @@
+Menu:
+  Title: "&8&lPlayers Online&r"
+  Forward:
+     Material: ARROW
+     Name: "&f&lNext Page"
+  Previous:
+     Material: ARROW
+     Name: "&f&lPrevious Page"
