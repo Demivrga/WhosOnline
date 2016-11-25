@@ -18,7 +18,7 @@ public class WhosOnline extends JavaPlugin {
 		
 		System.out.println("[WhosOnline] has been ENABLED");
 		
-		pm.registerEvents(new WhosOnlineMenuEvents(this), this);
+		pm.registerEvents(new WhosOnlineMenuEvents(), this);
 		pm.registerEvents(new WhosOnlineActionMenuEvents(), this);
 		
 		this.getCommand("online").setExecutor(new Online());
