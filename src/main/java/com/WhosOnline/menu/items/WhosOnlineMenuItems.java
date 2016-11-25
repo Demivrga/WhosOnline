@@ -26,7 +26,7 @@ public class WhosOnlineMenuItems {
 
 		// Lore
 		if (conf.getStringList("Menu.Player.Lore") != null) {
-			skullmeta.setLore(conf.getStringList("Menu.Player.Lore"));	
+			skullmeta.setLore(MessageUtil.listTranslate(conf.getStringList("Menu.Player.Lore")));
 		}
 		// Append the Meta to the Item
 		skull.setItemMeta(skullmeta);

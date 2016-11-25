@@ -7,9 +7,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
-import org.bukkit.event.inventory.InventoryType;
 
 import com.WhosOnline.WhosOnline;
+import com.WhosOnline.menu.WhosOnlineActionMenu;
 import com.WhosOnline.menu.WhosOnlineMenu;
 import com.WhosOnline.menu.items.WhosOnlineMenuItems;
 
@@ -56,6 +56,9 @@ public class WhosOnlineMenuEvents implements Listener {
 						if (ev.getCurrentItem().getItemMeta().getDisplayName() != null) {
 							if (ev.getCurrentItem().getItemMeta().getDisplayName().equals(target.getDisplayName())) {
 								// Open the Action Menu here!
+
+								p.openInventory(WhosOnlineActionMenu.PlayerActionMenu(target));
+
 							}
 						}
 					}
