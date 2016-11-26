@@ -4,8 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.WhosOnline.commands.Online;
-import com.WhosOnline.events.WhosOnlineActionMenuEvents;
 import com.WhosOnline.events.WhosOnlineMenuEvents;
+import com.WhosOnline.events.WhosOnlineStaffMenuEvents;
 
 public class WhosOnline extends JavaPlugin {
 	
@@ -19,7 +19,8 @@ public class WhosOnline extends JavaPlugin {
 		System.out.println("[WhosOnline] has been ENABLED");
 		
 		pm.registerEvents(new WhosOnlineMenuEvents(), this);
-		pm.registerEvents(new WhosOnlineActionMenuEvents(), this);
+		pm.registerEvents(new WhosOnlineStaffMenuEvents(), this);
+		
 		
 		this.getCommand("online").setExecutor(new Online());
 		this.getCommand("who").setExecutor(new Online());

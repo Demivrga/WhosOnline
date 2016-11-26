@@ -5,9 +5,13 @@
 
 Menu:
   Title: "&8&lPlayers Online&r"
+  Staff_Title: "&8&lStaff Online"
   Forward:
      Material: ARROW
      Name: "&f&lNext Page"
   Previous:
      Material: ARROW
      Name: "&f&lPrevious Page"
+  Staff:
+     Material: BOOK
+     Name: "&f&lStaff Menu"

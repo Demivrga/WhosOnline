@@ -68,5 +68,36 @@ public class WhosOnlineMenuItems {
 		return ArrowForward;
 
 	}
-
+	
+	public static ItemStack StaffMenu() {
+		
+		ItemStack StaffMenu = new ItemStack(Material.getMaterial(conf.getString("Menu.Staff.Material")));
+		ItemMeta StaffMenuMeta = StaffMenu.getItemMeta();
+		
+		// Set Lore/Name/Anything Else here
+		StaffMenuMeta.setDisplayName(MessageUtil.translate(conf.getString("Menu.Staff.Name")));
+		
+		// Append the Meta to the Item
+		StaffMenu.setItemMeta(StaffMenuMeta);
+		
+		// Return the Item
+		return StaffMenu;
+		
+	}
+	
+	public static ItemStack Error(String error) {
+		
+		ItemStack Error = new ItemStack(Material.BARRIER);
+		ItemMeta ErrorMeta = Error.getItemMeta();
+		
+		// Set Lore/Name/Anything Else here
+		ErrorMeta.setDisplayName(MessageUtil.translate(error));
+		
+		// Append the Meta to the Item
+		Error.setItemMeta(ErrorMeta);
+		
+		// Return the Item
+		return Error;
+		
+	}
 }

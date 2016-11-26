@@ -3,12 +3,15 @@ package com.WhosOnline.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import com.WhosOnline.WhosOnline;
 import com.WhosOnline.menu.WhosOnlineMenu;
 
 public class Online implements CommandExecutor {
 
+	public static FileConfiguration conf = WhosOnline.pl().getConfig();
 	public boolean onCommand(CommandSender cs, Command cmd, String lbl, String[] args) {
 
 		Player p = (Player) cs;
