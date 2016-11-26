@@ -7,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
-//import com.WhosOnline.menu.WhosOnlineActionMenu;
 import com.WhosOnline.menu.WhosOnlineMenu;
 import com.WhosOnline.menu.WhosOnlineStaffMenu;
 import com.WhosOnline.menu.items.WhosOnlineMenuItems;
@@ -30,19 +29,19 @@ public class WhosOnlineMenuEvents implements Listener {
 				String[] s1 = ChatColor.stripColor(ev.getClickedInventory().getTitle()).split("#");
 				String s2 = s1[1];
 
-				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowForward())) {
+				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowForward(p))) {
 					if (Integer.parseInt(s2) + 1 < j) {
 						p.openInventory(WhosOnlineMenu.onlinePlayers(p, Integer.parseInt(s2) + 1));
 					}
 				}
 
-				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowBack())) {
+				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowBack(p))) {
 					if (Integer.parseInt(s2) > 1) {
 						p.openInventory(WhosOnlineMenu.onlinePlayers(p, Integer.parseInt(s2) - 1));
 					}
 				}
 
-				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.StaffMenu())) {
+				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.StaffMenu(p))) {
 					if (p.hasPermission("WhosOnline.view.staff")) {
 						p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, 1));
 					} else {

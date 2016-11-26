@@ -38,9 +38,9 @@ public class WhosOnlineMenu {
 			i++;
 		}
 
-		list.setItem(50, WhosOnlineMenuItems.ArrowForward());
-		list.setItem(49, WhosOnlineMenuItems.StaffMenu());
-		list.setItem(48, WhosOnlineMenuItems.ArrowBack());
+		list.setItem(50, WhosOnlineMenuItems.ArrowForward(p));
+		list.setItem(49, WhosOnlineMenuItems.StaffMenu(p));
+		list.setItem(48, WhosOnlineMenuItems.ArrowBack(p));
 		return list;
 	}
 

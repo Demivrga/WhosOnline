@@ -27,13 +27,13 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				String[] s1 = ChatColor.stripColor(ev.getClickedInventory().getTitle()).split("#");
 				String s2 = s1[1];
 
-				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowForward())) {
+				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowForward(p))) {
 					if (Integer.parseInt(s2) + 1 < j) {
 						p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2) + 1));
 					}
 				}
 
-				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowBack())) {
+				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowBack(p))) {
 					if (Integer.parseInt(s2) > 1) {
 						p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2) - 1));
 					}
@@ -41,6 +41,7 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 
 				if (ev.getSlot() == 49) {
 						p.openInventory(WhosOnlineMenu.onlinePlayers(p, 1));
+						ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR INVALID PERMISSIONS!"));
 				}
 			}
 		}

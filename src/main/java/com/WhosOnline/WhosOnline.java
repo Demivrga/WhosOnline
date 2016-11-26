@@ -9,7 +9,7 @@ import com.WhosOnline.events.WhosOnlineStaffMenuEvents;
 
 public class WhosOnline extends JavaPlugin {
 	
-	PluginManager pm = Bukkit.getPluginManager();
+	public static PluginManager pm = Bukkit.getPluginManager();
 	private static WhosOnline pl;
 	
 	public void onEnable() {
@@ -17,7 +17,7 @@ public class WhosOnline extends JavaPlugin {
 		saveDefaultConfig();
 		
 		System.out.println("[WhosOnline] has been ENABLED");
-		
+	
 		pm.registerEvents(new WhosOnlineMenuEvents(), this);
 		pm.registerEvents(new WhosOnlineStaffMenuEvents(), this);
 		
