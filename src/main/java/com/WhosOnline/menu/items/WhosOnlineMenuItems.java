@@ -27,7 +27,7 @@ public class WhosOnlineMenuItems {
 		SkullMeta skullmeta = (SkullMeta) skull.getItemMeta();
 
 		// Set Lore/Name/Anything Else here
-		skullmeta.setOwner(p.getDisplayName().toString());
+		skullmeta.setOwner(p.getName().toString());
 		skullmeta.setDisplayName(p.getDisplayName());
 		
 		// Lore
