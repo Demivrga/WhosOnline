@@ -49,7 +49,7 @@ public class WhosOnlineMenuEvents implements Listener {
 					if (p.hasPermission("WhosOnline.view.staff")) {
 						p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, 1));
 					} else {
-						ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR INVALID PERMISSIONS!"));
+						ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR"));
 					}
 				}
 			}

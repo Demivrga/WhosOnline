@@ -44,7 +44,6 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 
 				if (ev.getSlot() == 49) {
 					p.openInventory(WhosOnlineMenu.onlinePlayers(p, 1));
-					ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR INVALID PERMISSIONS!"));
 				}
 			}
 		}
