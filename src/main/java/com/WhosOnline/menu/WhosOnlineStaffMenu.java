@@ -24,9 +24,11 @@ public class WhosOnlineStaffMenu {
 
 		for (Player target : Bukkit.getOnlinePlayers()) {
 			if (target.hasPermission("WhosOnline.staff")) {
-				if ((i >= first) && (i <= last)) {
+				if (!target.hasPermission("WhosOnline.hidden")) {
+					if ((i >= first) && (i <= last)) {
 
-					list.addItem(new ItemStack[] { WhosOnlineMenuItems.PlayersHead(target) });
+						list.addItem(new ItemStack[] { WhosOnlineMenuItems.PlayersHead(target) });
+					}
 				}
 			}
 			i++;

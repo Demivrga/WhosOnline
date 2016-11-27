@@ -11,7 +11,7 @@ import com.WhosOnline.menu.items.WhosOnlineMenuItems;
 import com.WhosOnline.util.MessageUtil;
 
 public class WhosOnlineMenu {
-	
+
 	public static FileConfiguration conf = WhosOnline.pl().getConfig();
 	public static String OnlineTitle = (MessageUtil.translate(conf.getString("Menu.Title") + " " + "#"));
 
@@ -31,9 +31,11 @@ public class WhosOnlineMenu {
 		int i = 1;
 
 		for (Player target : Bukkit.getOnlinePlayers()) {
-			if ((i >= first) && (i <= last)) {
+			if (!target.hasPermission("WhosOnline.hidden")) {
+				if ((i >= first) && (i <= last)) {
 
-				list.addItem(new ItemStack[] { WhosOnlineMenuItems.PlayersHead(target) });
+					list.addItem(new ItemStack[] { WhosOnlineMenuItems.PlayersHead(target) });
+				}
 			}
 			i++;
 		}

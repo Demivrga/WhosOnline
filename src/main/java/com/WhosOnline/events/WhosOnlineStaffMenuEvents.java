@@ -2,11 +2,14 @@ package com.WhosOnline.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.inventory.ItemStack;
 
 import com.WhosOnline.menu.WhosOnlineMenu;
 import com.WhosOnline.menu.WhosOnlineStaffMenu;
@@ -40,10 +43,20 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				}
 
 				if (ev.getSlot() == 49) {
-						p.openInventory(WhosOnlineMenu.onlinePlayers(p, 1));
-						ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR INVALID PERMISSIONS!"));
+					p.openInventory(WhosOnlineMenu.onlinePlayers(p, 1));
+					ev.getInventory().setItem(49, WhosOnlineMenuItems.Error("&4&lERROR INVALID PERMISSIONS!"));
 				}
 			}
+		}
+	}
+
+	@EventHandler
+	public void RemovePrevious(InventoryOpenEvent ev) {
+
+		ItemStack air = new ItemStack(Material.AIR);
+		
+		if(ev.getInventory().getTitle().equals(WhosOnlineStaffMenu.StaffOnlineTitle + "1")) {
+			ev.getInventory().setItem(48, air);
 		}
 	}
 
