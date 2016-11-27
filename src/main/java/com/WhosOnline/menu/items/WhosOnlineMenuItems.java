@@ -28,8 +28,25 @@ public class WhosOnlineMenuItems {
 
 		// Set Lore/Name/Anything Else here
 		skullmeta.setOwner(p.getName().toString());
-		skullmeta.setDisplayName(p.getDisplayName());
-		
+
+		if (conf.getString("Menu.Player.Name") != null) {
+
+			String unconverted = conf.getString("Menu.Player.Name");
+
+			if (conf.getString("Menu.Player.Name").equalsIgnoreCase("Displayname")) {
+				skullmeta.setDisplayName(p.getDisplayName());
+			} else if (conf.getString("Menu.Player.Name").equalsIgnoreCase("Name")) {
+				skullmeta.setDisplayName(p.getName().toString());
+			} else if (pm.isPluginEnabled("PlaceholderAPI")) {
+
+				String converted = PlaceholderAPI.setPlaceholders(p, unconverted);
+				skullmeta.setDisplayName(MessageUtil.translate(converted).replaceAll("%whosonline%", p.getName()));
+
+			} else {
+				skullmeta.setDisplayName(MessageUtil.translate(unconverted).replaceAll("%whosonline%", p.getName()));
+			}
+		}
+
 		// Lore
 		if (conf.getStringList("Menu.Player.Lore") != null) {
 
@@ -101,10 +118,10 @@ public class WhosOnlineMenuItems {
 		ItemMeta StaffMenuMeta = StaffMenu.getItemMeta();
 
 		// Set Lore/Name/Anything Else here
-		if(pm.isPluginEnabled("PlaceholderAPI")) {
+		if (pm.isPluginEnabled("PlaceholderAPI")) {
 			String unconverted = conf.getString("Menu.Staff.Name");
 			String converted = PlaceholderAPI.setPlaceholders(p, unconverted);
-		StaffMenuMeta.setDisplayName(MessageUtil.translate(converted));
+			StaffMenuMeta.setDisplayName(MessageUtil.translate(converted));
 		} else {
 			StaffMenuMeta.setDisplayName(MessageUtil.translate(conf.getString("Menu.Staff.Name")));
 		}

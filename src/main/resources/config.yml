@@ -1,17 +1,27 @@
 ############################################
 ##             WhosOnline GUI             ##
 ## https://github.com/Demivrga/WhosOnline ##
+##         PLACEHOLDERAPI SUPPORT         ##
+##         PLACEHOLDERAPI SUPPORT         ##
+##                                        ##
+##          Player Name Options:          ##
+##            - displayname               ##
+##            - %whosonline%              ##
+##            - name                      ##
+##          Or set it yourself!           ##
 ############################################
 
 Menu:
   Title: "&8&lPlayers Online&r"
-  Staff_Title: "&8&lStaff Online"
+  Staff_Title: "&8&lStaff Online&r"
   Forward:
      Material: ARROW
-     Name: "&f&lNext Page"
+     Name: "&fNext Page"
   Previous:
      Material: ARROW
-     Name: "&f&lPrevious Page"
+     Name: "&fPrevious Page"
   Staff:
      Material: BOOK
      Name: "&f&lStaff Menu"
+  Player:
+     Name: "&f%whosonline%"
