@@ -102,16 +102,18 @@ public class WhosOnlineMenuEvents implements Listener {
 	public void updateOnLeave(PlayerQuitEvent ev) {
 
 		Player quitter = ev.getPlayer();
-		PermissionUtil.setPermission(quitter, "WhosOnline.hidden");
+		if (!quitter.hasPermission("WhosOnline.hidden")) {
+			PermissionUtil.setPermission(quitter, "WhosOnline.hidden");
 
-		for (Player p : Bukkit.getOnlinePlayers()) {
-			if (p.getOpenInventory().getTitle().contains(WhosOnlineMenu.OnlineTitle)) {
-				String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
-				String s2 = s1[1];
+			for (Player p : Bukkit.getOnlinePlayers()) {
+				if (p.getOpenInventory().getTitle().contains(WhosOnlineMenu.OnlineTitle)) {
+					String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
+					String s2 = s1[1];
 
-				p.openInventory(WhosOnlineMenu.onlinePlayers(p, Integer.parseInt(s2)));
+					p.openInventory(WhosOnlineMenu.onlinePlayers(p, Integer.parseInt(s2)));
+				}
 			}
+			PermissionUtil.unsetPermission(quitter, "WhosOnline.hidden");
 		}
-		PermissionUtil.unsetPermission(quitter, "WhosOnline.hidden");
 	}
 }
