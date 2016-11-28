@@ -94,7 +94,6 @@ public class WhosOnlineMenuEvents implements Listener {
 				String s2 = s1[1];
 
 				p.closeInventory();
-				p.updateInventory();
 				p.openInventory(WhosOnlineMenu.onlinePlayers(p, Integer.parseInt(s2)));
 			}
 		}

@@ -87,7 +87,6 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				String s2 = s1[1];
 
 				p.closeInventory();
-				p.updateInventory();
 				p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2)));
 			}
 		}
