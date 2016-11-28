@@ -86,7 +86,6 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
 				String s2 = s1[1];
 
-				p.closeInventory();
 				p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2)));
 			}
 		}
@@ -103,7 +102,6 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
 				String s2 = s1[1];
 
-				p.closeInventory();
 				p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2)));
 			}
 		}
