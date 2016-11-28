@@ -8,34 +8,33 @@ import com.WhosOnline.events.WhosOnlineMenuEvents;
 import com.WhosOnline.events.WhosOnlineStaffMenuEvents;
 
 public class WhosOnline extends JavaPlugin {
-	
+
 	public static PluginManager pm = Bukkit.getPluginManager();
 	private static WhosOnline pl;
-	
+
 	public void onEnable() {
-		
+
 		saveDefaultConfig();
-		
+
 		System.out.println("[WhosOnline] has been ENABLED");
-	
+
 		pm.registerEvents(new WhosOnlineMenuEvents(), this);
 		pm.registerEvents(new WhosOnlineStaffMenuEvents(), this);
-		
-		
+
 		this.getCommand("online").setExecutor(new Online());
 		this.getCommand("who").setExecutor(new Online());
 		this.getCommand("list").setExecutor(new Online());
 		this.getCommand("users").setExecutor(new Online());
 		this.getCommand("whom").setExecutor(new Online());
-		
+
 	}
-	
+
 	public void onDisable() {
-		
+
 		System.out.println("[WhosOnline] has been DISABLED");
-		
+
 	}
-	
+
 	public WhosOnline() {
 		pl = this;
 	}

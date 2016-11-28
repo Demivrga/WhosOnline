@@ -9,7 +9,7 @@ import org.bukkit.permissions.PermissionAttachment;
 import com.WhosOnline.WhosOnline;
 
 public class PermissionUtil {
-	
+
 	public static void setPermission(Player player, String permission) {
 		HashMap<UUID, PermissionAttachment> perms = new HashMap<UUID, PermissionAttachment>();
 		PermissionAttachment attachment = player.addAttachment(WhosOnline.pl());
@@ -17,7 +17,7 @@ public class PermissionUtil {
 		PermissionAttachment pperms = perms.get(player.getUniqueId());
 		pperms.setPermission(permission, true);
 	}
-	
+
 	public static void unsetPermission(Player player, String permission) {
 		HashMap<UUID, PermissionAttachment> perms = new HashMap<UUID, PermissionAttachment>();
 		PermissionAttachment attachment = player.addAttachment(WhosOnline.pl());

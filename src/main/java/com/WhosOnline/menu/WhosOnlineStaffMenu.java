@@ -12,7 +12,7 @@ import com.WhosOnline.util.MessageUtil;
 
 public class WhosOnlineStaffMenu {
 
-	public static FileConfiguration conf = WhosOnline.pl().getConfig();
+	private static FileConfiguration conf = WhosOnline.pl().getConfig();
 	public static String StaffOnlineTitle = (MessageUtil.translate(conf.getString("Menu.Staff_Title") + " " + "#"));
 
 	public static Inventory onlinePlayers(Player p, int page) {
