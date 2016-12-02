@@ -1,6 +1,6 @@
 name: WhosOnline
 main: com.WhosOnline.WhosOnline
-version: 0.0.6
+version: 0.0.6.5
 author: Demonly
 softdepend: [PlaceholderAPI]
 commands:

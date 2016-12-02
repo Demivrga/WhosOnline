@@ -9,14 +9,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
 import com.WhosOnline.menu.WhosOnlineMenu;
 import com.WhosOnline.menu.WhosOnlineStaffMenu;
 import com.WhosOnline.menu.items.WhosOnlineMenuItems;
-import com.WhosOnline.util.PermissionUtil;
 
 public class WhosOnlineStaffMenuEvents implements Listener {
 
@@ -76,35 +73,5 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 		if (ev.getInventory().getName().contains(WhosOnlineStaffMenu.StaffOnlineTitle)) {
 			ev.setCancelled(true);
 		}
-	}
-
-	@EventHandler
-	public void updateOnJoin(PlayerJoinEvent ev) {
-
-		for (Player p : Bukkit.getOnlinePlayers()) {
-			if (p.getOpenInventory().getTitle().contains(WhosOnlineStaffMenu.StaffOnlineTitle)) {
-				String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
-				String s2 = s1[1];
-
-				p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2)));
-			}
-		}
-	}
-
-	@EventHandler
-	public void updateOnLeave(PlayerQuitEvent ev) {
-
-		Player quitter = ev.getPlayer();
-		PermissionUtil.setPermission(quitter, "WhosOnline.hidden");
-
-		for (Player p : Bukkit.getOnlinePlayers()) {
-			if (p.getOpenInventory().getTitle().contains(WhosOnlineStaffMenu.StaffOnlineTitle)) {
-				String[] s1 = ChatColor.stripColor(p.getOpenInventory().getTitle()).split("#");
-				String s2 = s1[1];
-
-				p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2)));
-			}
-		}
-		PermissionUtil.unsetPermission(quitter, "WhosOnline.hidden");
 	}
 }
