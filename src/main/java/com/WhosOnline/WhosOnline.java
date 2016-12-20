@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.WhosOnline.commands.Online;
+import com.WhosOnline.commands.Staff;
 import com.WhosOnline.events.WhosOnlineMenuEvents;
 import com.WhosOnline.events.WhosOnlineStaffMenuEvents;
 
@@ -26,6 +27,8 @@ public class WhosOnline extends JavaPlugin {
 		this.getCommand("list").setExecutor(new Online());
 		this.getCommand("users").setExecutor(new Online());
 		this.getCommand("whom").setExecutor(new Online());
+		
+		this.getCommand("staff").setExecutor(new Staff());
 
 	}
 

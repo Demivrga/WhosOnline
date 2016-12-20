@@ -31,7 +31,7 @@ public class WhosOnlineStaffMenuEvents implements Listener {
 				String s2 = s1[1];
 
 				if (ev.getCurrentItem().equals(WhosOnlineMenuItems.ArrowForward(p))) {
-					if (Integer.parseInt(s2) + 1 < j) {
+					if (Integer.parseInt(s2) + 1 <= j) {
 						p.openInventory(WhosOnlineStaffMenu.onlinePlayers(p, Integer.parseInt(s2) + 1));
 					}
 				}

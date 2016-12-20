@@ -21,6 +21,7 @@ Menu:
      Material: ARROW
      Name: "&fPrevious Page"
   Staff:
+     Enabled: true
      Material: BOOK
      Name: "&f&lStaff Menu"
   Player:

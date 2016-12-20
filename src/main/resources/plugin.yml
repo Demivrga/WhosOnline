@@ -1,6 +1,6 @@
 name: WhosOnline
 main: com.WhosOnline.WhosOnline
-version: 0.0.6.5
+version: 0.1
 author: Demonly
 softdepend: [PlaceholderAPI]
 commands:
@@ -14,3 +14,5 @@ commands:
     description: Opens the Online Inventory.
   whom:
     description: Opens the Online Inventory.
+  staff:
+    description: Opens the Online Staff Inventory.

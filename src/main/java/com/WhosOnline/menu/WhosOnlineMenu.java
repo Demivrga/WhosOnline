@@ -14,6 +14,7 @@ public class WhosOnlineMenu {
 
 	private static FileConfiguration conf = WhosOnline.pl().getConfig();
 	public static String OnlineTitle = (MessageUtil.translate(conf.getString("Menu.Title") + " " + "#"));
+	private static Boolean enabled = conf.getBoolean("Menu.Staff.Enabled");
 
 	public static Inventory onlinePlayers(Player p, int page) {
 		Inventory list = Bukkit.createInventory(null, 54, OnlineTitle + page);
@@ -43,9 +44,11 @@ public class WhosOnlineMenu {
 		}
 
 		list.setItem(50, WhosOnlineMenuItems.ArrowForward(p));
-		list.setItem(49, WhosOnlineMenuItems.StaffMenu(p));
+
+		if (enabled != null && enabled) {
+			list.setItem(49, WhosOnlineMenuItems.StaffMenu(p));
+		}
 		list.setItem(48, WhosOnlineMenuItems.ArrowBack(p));
 		return list;
 	}
-
 }
